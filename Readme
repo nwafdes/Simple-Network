@@ -1,0 +1,94 @@
+🔐 Terraform AWS Infrastructure: VPC with Jump Server & Private Hosts
+A fully functional and modular Terraform project to provision a secure AWS infrastructure that includes:
+
+VPC with public & private subnets
+
+Internet & NAT Gateways
+
+EC2 Jump Server (Bastion)
+
+Internal private EC2 hosts
+
+SSH Key pair generation
+
+Basic routing and security groups
+
+This project is ideal for learning secure infrastructure design, IaC (Infrastructure as Code) practices, and serves as a foundation for more complex deployments (e.g., VPN, ECS, EKS, HA setups).
+
+📌 Architecture Overview
+
+CIDR: 172.22.226.0/24
+Internal machines are only accessible via the Jump Server.
+
+🧩 Features
+✅ Modular structure for better reusability and scalability
+
+🌍 Public subnet with Internet Gateway for the jump server
+
+🔒 Private subnet with NAT Gateway for internal EC2s (no direct internet access)
+
+🔑 SSH key creation for secure authentication
+
+🧠 Designed using AWS best practices for secure environments
+
+💡 Easily extensible for RDS, ECS, or Lambda integrations
+
+🚀 Getting Started
+Prerequisites
+Terraform >= v1.0
+
+AWS account with appropriate IAM permissions
+
+Configured AWS CLI (aws configure)
+
+🛠️ Usage
+bash
+Copy
+Edit
+cd Infrastructure/main
+
+# Initialize providers and modules
+terraform init
+
+# Review the plan
+terraform plan
+
+# Apply the infrastructure
+terraform apply
+📝 You will be prompted for confirmation before the actual creation starts.
+
+🔐 Security Considerations
+Jump Server is placed in the public subnet with SSH access restricted by security group.
+
+Internal EC2s have no public IPs and route internet traffic via NAT Gateway.
+
+SSH access to private instances is only allowed from the jump server (bastion pattern).
+
+SSH Key is locally generated and managed securely.
+
+💡 Why This Project?
+Recruiters and cloud teams look for engineers who:
+
+Understand secure cloud networking
+
+Build modular and reusable infrastructure
+
+Apply least privilege principles
+
+Use Terraform the right way
+
+This project demonstrates all of the above, using a clean, version-controlled IaC approach.
+
+👤 Author
+Nawaf
+Cloud & Security Engineer | AWS Certified | Terraform Practitioner
+LinkedIn • GitHub
+
+🏁 Next Steps (Suggestions)
+Add outputs for instance IPs
+
+Automate provisioning with CI/CD (e.g., GitHub Actions)
+
+Integrate SSM for agent-based access (instead of SSH)
+
+Implement logging and monitoring (CloudWatch)
