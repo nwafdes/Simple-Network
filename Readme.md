@@ -1,3 +1,4 @@
+![Architecture Diagram](./image.png)
 # 🔐 Terraform AWS Infrastructure: VPC with Jump Server & Private Hosts
 
 A fully functional and modular Terraform project to provision a secure AWS infrastructure that includes:
@@ -13,7 +14,7 @@ A fully functional and modular Terraform project to provision a secure AWS infra
 
 ## 📌 Architecture Overview
 
-![Architecture Diagram](./path/to/your-image.png)
+![Architecture Diagram](./image.png)
 
 > CIDR: `172.22.226.0/24`  
 > Internal machines are only accessible via the Jump Server.
